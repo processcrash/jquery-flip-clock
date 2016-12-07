@@ -112,8 +112,11 @@
     // 更新数字
     this.upgrade = function (s) {
       if (!s) return;
-      if (val.length != s.length) {
-        console.log('需要添加子标签');
+      if (_self.val.length != s.length) {
+        _self.html('');
+        _self.val = s;
+        // 重新渲染
+        init();
       }
       var arr = _strToArray(s);
       _upgradeValue(arr);
